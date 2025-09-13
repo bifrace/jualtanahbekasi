@@ -72,26 +72,25 @@
     }
     
     .slideshow-container {
-  position: relative;
-  max-width: 100%;
-  margin: 20px auto 0 auto;
-  border-radius: 8px;
-  overflow: hidden;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-  width: 100%;
-  max-width: 600px; /* sesuaikan lebar maksimal */
-  /* jangan set height tetap */
-}
+      position: relative;
+      max-width: 100%;
+      margin: 20px auto 0 auto;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      width: 100%;
+      max-width: 600px; /* sesuaikan lebar maksimal */
+      /* jangan set height tetap */
+    }
 
-.slides {
-  display: none;
-  width: 100%;
-  height: auto; /* biarkan tinggi mengikuti rasio gambar */
-  object-fit: contain; /* tampilkan seluruh gambar tanpa crop */
-  border-radius: 8px;
-  background-color: #f9f9f9; /* warna background untuk area kosong */
-}
-
+    .slides {
+      display: none;
+      width: 100%;
+      height: auto; /* biarkan tinggi mengikuti rasio gambar */
+      object-fit: contain; /* tampilkan seluruh gambar tanpa crop */
+      border-radius: 8px;
+      background-color: #f9f9f9; /* warna background untuk area kosong */
+    }
 
     /* Next & previous buttons */
     .prev, .next {
@@ -110,38 +109,6 @@
       transition: background-color 0.3s ease;
       z-index: 10;
     }
-
-    #whatsapp-float {
-    position: fixed;
-    width: 60px;
-    height: 60px;
-    bottom: 20px;
-    right: 20px;
-    background-color: #25d366;
-    border-radius: 50%;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.3);
-    z-index: 1000;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    transition: background-color 0.3s ease, opacity 0.3s ease;
-    opacity: 1;
-    }
-
-    #whatsapp-float.hide {
-    opacity: 0;
-    pointer-events: none;
-    }
-
-    #whatsapp-float:hover {
-    background-color: #1ebe57;
-    }
-
-    #whatsapp-float img {
-    width: 35px;
-    height: 35px;
-    }
-
     .next {
       right: 0;
       border-radius: 3px 0 0 3px;
@@ -171,6 +138,36 @@
     .active, .dot:hover {
       background-color: #7b3fbf; /* ungu violet */
     }
+
+    /* WhatsApp Floating Button */
+    #whatsapp-float {
+      position: fixed;
+      width: 60px;
+      height: 60px;
+      bottom: 20px;
+      right: 20px;
+      background-color: #25d366;
+      border-radius: 50%;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+      z-index: 1000;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      transition: background-color 0.3s ease, opacity 0.3s ease;
+      opacity: 1;
+    }
+    #whatsapp-float.hide {
+      opacity: 0;
+      pointer-events: none;
+    }
+    #whatsapp-float:hover {
+      background-color: #1ebe57;
+    }
+    #whatsapp-float img {
+      width: 35px;
+      height: 35px;
+    }
+
     /* Responsive */
     @media (max-width: 600px) {
       .slides {
@@ -178,6 +175,23 @@
       }
       .slideshow-container {
         height: 200px;
+      }
+      #whatsapp-float {
+        width: 50px;
+        height: 50px;
+        bottom: 15px;
+        right: 15px;
+      }
+      #whatsapp-float img {
+        width: 28px;
+        height: 28px;
+      }
+      header h1 {
+        font-size: 2rem;
+      }
+      .container {
+        padding: 0 10px;
+        margin: 15px auto;
       }
     }
   </style>
@@ -188,37 +202,10 @@
     <p>Tanah & Rumah Dijual – Mustika Jaya, Bekasi</p>
   </header>
 
-<!-- WhatsApp Floating Button -->
-    
-    <a href="https://wa.me/6281318139961" target="_blank" rel="noopener" id="whatsapp-float" aria-label="Chat WhatsApp">
+  <!-- WhatsApp Floating Button -->
+  <a href="https://wa.me/6281318139961" target="_blank" rel="noopener" id="whatsapp-float" aria-label="Chat WhatsApp">
     <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" />
   </a>
-
-  <script>
-    document.addEventListener('DOMContentLoaded', function() {
-      const whatsappBtn = document.getElementById('whatsapp-float');
-      const footer = document.querySelector('footer');
-  
-      function checkFooterVisibility() {
-        const footerRect = footer.getBoundingClientRect();
-        const windowHeight = window.innerHeight || document.documentElement.clientHeight;
-  
-        // Jika footer terlihat sebagian di viewport, sembunyikan tombol
-        if (footerRect.top < windowHeight && footerRect.bottom >= 0) {
-          whatsappBtn.classList.add('hide');
-        } else {
-          whatsappBtn.classList.remove('hide');
-        }
-      }
-  
-      // Cek saat scroll dan resize
-      window.addEventListener('scroll', checkFooterVisibility);
-      window.addEventListener('resize', checkFooterVisibility);
-  
-      // Cek sekali saat halaman dimuat
-      checkFooterVisibility();
-    });
-  </script>
 
   <div class="container">
 
@@ -244,11 +231,11 @@
 
       <!-- Slideshow Tanah -->
       <div class="slideshow-container" id="slideshow-tanah">
-            <img class="slides" src="img/tanah/1.jpg" alt="Rumah Mustika Jaya 1" />
-            <img class="slides" src="img/tanah/2.jpg" alt="Rumah Mustika Jaya 2" />
-            <img class="slides" src="img/tanah/3.jpg" alt="Rumah Mustika Jaya 3" />
-            <img class="slides" src="img/tanah/4.jpg" alt="Rumah Mustika Jaya 4" />
-            <img class="slides" src="img/tanah/5.jpg" alt="Rumah Mustika Jaya 5" />
+        <img class="slides" src="img/tanah/1.jpg" alt="Rumah Mustika Jaya 1" />
+        <img class="slides" src="img/tanah/2.jpg" alt="Rumah Mustika Jaya 2" />
+        <img class="slides" src="img/tanah/3.jpg" alt="Rumah Mustika Jaya 3" />
+        <img class="slides" src="img/tanah/4.jpg" alt="Rumah Mustika Jaya 4" />
+        <img class="slides" src="img/tanah/5.jpg" alt="Rumah Mustika Jaya 5" />
 
         <a class="prev" onclick="plusSlides(-1, 'tanah')">&#10094;</a>
         <a class="next" onclick="plusSlides(1, 'tanah')">&#10095;</a>
@@ -265,7 +252,7 @@
     <!-- Rumah Dijual Section -->
     <section>
       <h2>Rumah Dijual – Nyaman & Siap Huni</h2>
-      <p><strong>Alamat:</strong> Dukuh Zamrud, Blok F9/37, Mustika Jaya, Bekasi</p>
+      <p><strong>Alamat:</strong> Dukuh Zamrud, Blok F, Mustika Jaya, Bekasi</p>
       <ul>
         <li><strong>Luas Tanah (LT):</strong> 117 m²</li>
         <li><strong>Luas Bangunan (LB):</strong> 100 m²</li>
@@ -353,18 +340,47 @@
     showSlides(slideIndexes.tanah, 'tanah');
     showSlides(slideIndexes.rumah, 'rumah');
   </script>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const whatsappBtn = document.getElementById('whatsapp-float');
+      const footer = document.querySelector('footer');
   
-</body>
-<footer style="background-color: #7b3fbf; color: white; text-align: center; padding: 20px 15px; font-size: 0.9rem; border-radius: 0 0 8px 8px;">
+      function checkFooterVisibility() {
+        const footerRect = footer.getBoundingClientRect();
+        const windowHeight = window.innerHeight || document.documentElement.clientHeight;
+  
+        // Jika footer terlihat sebagian di viewport, sembunyikan tombol
+        if (footerRect.top < windowHeight && footerRect.bottom >= 0) {
+          whatsappBtn.classList.add('hide');
+        } else {
+          whatsappBtn.classList.remove('hide');
+        }
+      }
+  
+      // Cek saat scroll dan resize
+      window.addEventListener('scroll', checkFooterVisibility);
+      window.addEventListener('resize', checkFooterVisibility);
+  
+      // Cek sekali saat halaman dimuat
+      checkFooterVisibility();
+    });
+  </script>
+
+  <footer style="background-color: #7b3fbf; color: white; text-align: center; padding: 20px 15px; font-size: 0.9rem; border-radius: 0 0 8px 8px;">
     <p>© 2025 JualTanahBekasi. All rights reserved.</p>
     <p>
-      <a href="mailto:info@jualtanahbekasi.com" style="color: #d1c4e9; text-decoration: none;">sosmedviolet@gmail.com</a> | 
-      <a href="tel:+628123456789" style="color: #d1c4e9; text-decoration: none;">+62 812-3456-789</a>
+      <a href="https://wa.me/6281318139961" target="_blank" rel="noopener" style="color: #d1c4e9; text-decoration: none;">
+        sosmedviolet@gmail.com
+      </a> | 
+      <a href="https://wa.me/6281318139961" target="_blank" rel="noopener" style="color: #d1c4e9; text-decoration: none;">
+        +62 813-1813-9961
+      </a>
     </p>
     <p>
-
       Lokasi Tanah: Jl. Pulo Utama, Mustika Jaya, Bekasi<br />
-      Lokasi Rumah: Dukuh Zamrud, Blok F9/37, Mustika Jaya, Bekasi
+      Lokasi Rumah: Dukuh Zamrud, Blok F, Mustika Jaya, Bekasi
     </p>
   </footer>
+</body>
 </html>
