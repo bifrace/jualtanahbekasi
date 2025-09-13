@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Jual Tanah Bekasi - Mustika Jaya</title>
+  <style>
+    /* Reset & base */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #f9f9f9;
+      color: #333;
+      line-height: 1.6;
+    }
+    a {
+      color: #007bff;
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+    .container {
+      max-width: 960px;
+      margin: 20px auto;
+      padding: 0 15px;
+    }
+    h1, h2, h3 {
+      margin-bottom: 10px;
+      color: #222;
+    }
+    ul {
+      list-style-type: disc;
+      margin-left: 20px;
+      margin-bottom: 15px;
+    }
+    /* Header */
+    header {
+      background-color: #7b3fbf; /* ungu violet */
+      color: white;
+      padding: 20px 0;
+      text-align: center;
+      margin-bottom: 30px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    header h1 {
+      color: white; /* pastikan putih */
+      font-weight: 700;
+      font-size: 2.5rem;
+    }
+    /* Section styles */
+    section {
+      background: white;
+      padding: 20px 25px;
+      margin-bottom: 30px;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    }
+    .price {
+      font-weight: 700;
+      font-size: 1.3rem;
+      color: #d9534f;
+      margin-bottom: 15px;
+    }
+    .highlight {
+      font-weight: 700;
+      color: #004d99;
+    }
+    
+    .slideshow-container {
+  position: relative;
+  max-width: 100%;
+  margin: 20px auto 0 auto;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  width: 100%;
+  max-width: 600px; /* sesuaikan lebar maksimal */
+  /* jangan set height tetap */
+}
+
+.slides {
+  display: none;
+  width: 100%;
+  height: auto; /* biarkan tinggi mengikuti rasio gambar */
+  object-fit: contain; /* tampilkan seluruh gambar tanpa crop */
+  border-radius: 8px;
+  background-color: #f9f9f9; /* warna background untuk area kosong */
+}
+
+
+    /* Next & previous buttons */
+    .prev, .next {
+      cursor: pointer;
+      position: absolute;
+      top: 50%;
+      width: auto;
+      padding: 12px;
+      margin-top: -22px;
+      color: white;
+      font-weight: bold;
+      font-size: 18px;
+      border-radius: 0 3px 3px 0;
+      user-select: none;
+      background-color: rgba(0,0,0,0.4);
+      transition: background-color 0.3s ease;
+      z-index: 10;
+    }
+    .next {
+      right: 0;
+      border-radius: 3px 0 0 3px;
+    }
+    .prev:hover, .next:hover {
+      background-color: rgba(0,0,0,0.7);
+    }
+    /* Dots */
+    .dots-container {
+      text-align: center;
+      padding: 10px 0;
+      background: #fff;
+      border-radius: 0 0 8px 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+      user-select: none;
+    }
+    .dot {
+      cursor: pointer;
+      height: 12px;
+      width: 12px;
+      margin: 0 5px;
+      background-color: #bbb;
+      border-radius: 50%;
+      display: inline-block;
+      transition: background-color 0.3s ease;
+    }
+    .active, .dot:hover {
+      background-color: #7b3fbf; /* ungu violet */
+    }
+    /* Responsive */
+    @media (max-width: 600px) {
+      .slides {
+        height: 200px;
+      }
+      .slideshow-container {
+        height: 200px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>JualTanahBekasi</h1>
+    <p>Tanah & Rumah Dijual – Mustika Jaya, Bekasi</p>
+  </header>
+
+  <div class="container">
+
+    <!-- Tanah Dijual Section -->
+    <section>
+      <h2>Tanah Dijual – Luas & Strategis</h2>
+      <p><strong>Alamat:</strong> Jl. Pulo Utama, RT.3/RW.009, Padurenan, Mustika Jaya, Kota Bekasi, Jawa Barat</p>
+      <ul>
+        <li><strong>Luas Tanah:</strong> 761 m²</li>
+        <li><strong>Status Tanah:</strong> Hak Milik (SHM)</li>
+        <li><strong>Akses:</strong> Dekat jalan utama, mudah diakses kendaraan besar</li>
+        <li><strong>Lingkungan:</strong> Tenang, aman, kawasan berkembang</li>
+        <li><strong>Potensi:</strong> Cocok untuk rumah tinggal, ruko, gudang, atau investasi</li>
+      </ul>
+      <p class="price">Harga: <span class="highlight">Rp 1,7 juta/m²</span></p>
+      <p><em>Harga bisa nego untuk pembeli serius</em></p>
+      <h3>Keunggulan:</h3>
+      <ul>
+        <li>Lokasi strategis di kawasan Mustika Jaya</li>
+        <li>Dekat fasilitas umum (sekolah, pasar, transportasi)</li>
+        <li>Tanah datar, mudah untuk konstruksi</li>
+      </ul>
+
+      <!-- Slideshow Tanah -->
+      <div class="slideshow-container" id="slideshow-tanah">
+            <img class="slides" src="img/tanah/1.jpg" alt="Rumah Mustika Jaya 1" />
+            <img class="slides" src="img/tanah/2.jpg" alt="Rumah Mustika Jaya 2" />
+            <img class="slides" src="img/tanah/3.jpg" alt="Rumah Mustika Jaya 3" />
+            <img class="slides" src="img/tanah/4.jpg" alt="Rumah Mustika Jaya 4" />
+            <img class="slides" src="img/tanah/5.jpg" alt="Rumah Mustika Jaya 5" />
+
+        <a class="prev" onclick="plusSlides(-1, 'tanah')">&#10094;</a>
+        <a class="next" onclick="plusSlides(1, 'tanah')">&#10095;</a>
+      </div>
+      <div class="dots-container" id="dots-tanah">
+        <span class="dot" onclick="currentSlide(1, 'tanah')"></span> 
+        <span class="dot" onclick="currentSlide(2, 'tanah')"></span> 
+        <span class="dot" onclick="currentSlide(3, 'tanah')"></span>
+        <span class="dot" onclick="currentSlide(4, 'tanah')"></span>
+        <span class="dot" onclick="currentSlide(5, 'tanah')"></span> 
+      </div>
+    </section>
+
+    <!-- Rumah Dijual Section -->
+    <section>
+      <h2>Rumah Dijual – Nyaman & Siap Huni</h2>
+      <p><strong>Alamat:</strong> Dukuh Zamrud, Blok F9/37, Mustika Jaya, Bekasi</p>
+      <ul>
+        <li><strong>Luas Tanah (LT):</strong> 117 m²</li>
+        <li><strong>Luas Bangunan (LB):</strong> 100 m²</li>
+        <li><strong>Kamar Tidur:</strong> 2</li>
+        <li><strong>Kamar Mandi:</strong> 2</li>
+        <li><strong>Fasilitas:</strong> Dapur lengkap, ruang keluarga luas, carport 1 mobil, listrik 2.200 watt, air PDAM + sumur cadangan</li>
+      </ul>
+      <p class="price">Harga: <span class="highlight">Rp 1,7 juta/m²</span></p>
+      <h3>Keunggulan:</h3>
+      <ul>
+        <li>Bangunan kokoh, siap huni</li>
+        <li>Lingkungan aman & nyaman</li>
+        <li>Dekat fasilitas umum: sekolah, pasar, minimarket, transportasi umum</li>
+        <li>Potensi investasi bagus, mudah dijual atau disewakan</li>
+      </ul>
+
+      <!-- Slideshow Rumah -->
+      <div class="slideshow-container" id="slideshow-rumah">
+        <img class="slides" src="img/rumah/1.jpg" alt="Rumah Mustika Jaya 1" />
+        <img class="slides" src="img/rumah/2.jpg" alt="Rumah Mustika Jaya 2" />
+        <img class="slides" src="img/rumah/3.jpg" alt="Rumah Mustika Jaya 3" />
+        <img class="slides" src="img/rumah/4.jpg" alt="Rumah Mustika Jaya 4" />
+        <img class="slides" src="img/rumah/5.jpg" alt="Rumah Mustika Jaya 5" />
+        <img class="slides" src="img/rumah/6.jpg" alt="Rumah Mustika Jaya 6" />
+        <img class="slides" src="img/rumah/7.jpg" alt="Rumah Mustika Jaya 7" />
+        <img class="slides" src="img/rumah/8.jpg" alt="Rumah Mustika Jaya 8" />
+        <img class="slides" src="img/rumah/9.jpg" alt="Rumah Mustika Jaya 9" />
+      
+        <a class="prev" onclick="plusSlides(-1, 'rumah')">&#10094;</a>
+        <a class="next" onclick="plusSlides(1, 'rumah')">&#10095;</a>
+      </div>
+      <div class="dots-container" id="dots-rumah">
+        <span class="dot" onclick="currentSlide(1, 'rumah')"></span> 
+        <span class="dot" onclick="currentSlide(2, 'rumah')"></span> 
+        <span class="dot" onclick="currentSlide(3, 'rumah')"></span> 
+        <span class="dot" onclick="currentSlide(4, 'rumah')"></span> 
+        <span class="dot" onclick="currentSlide(5, 'rumah')"></span> 
+        <span class="dot" onclick="currentSlide(6, 'rumah')"></span> 
+        <span class="dot" onclick="currentSlide(7, 'rumah')"></span> 
+        <span class="dot" onclick="currentSlide(8, 'rumah')"></span> 
+        <span class="dot" onclick="currentSlide(9, 'rumah')"></span> 
+      </div>
+    </section>
+
+  </div>
+
+  <script>
+    // Slide indexes for each slideshow
+    const slideIndexes = {
+      tanah: 1,
+      rumah: 1
+    };
+
+    function plusSlides(n, type) {
+      showSlides(slideIndexes[type] += n, type);
+    }
+
+    function currentSlide(n, type) {
+      showSlides(slideIndexes[type] = n, type);
+    }
+
+    function showSlides(n, type) {
+      let i;
+      const containerId = type === 'tanah' ? 'slideshow-tanah' : 'slideshow-rumah';
+      const dotsId = type === 'tanah' ? 'dots-tanah' : 'dots-rumah';
+
+      const slideshow = document.getElementById(containerId);
+      const slides = slideshow.getElementsByClassName("slides");
+      const dotsContainer = document.getElementById(dotsId);
+      const dots = dotsContainer.getElementsByClassName("dot");
+
+      if (n > slides.length) {slideIndexes[type] = 1}    
+      if (n < 1) {slideIndexes[type] = slides.length}
+      for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";  
+      }
+      for (i = 0; i < dots.length; i++) {
+        dots[i].className = dots[i].className.replace(" active", "");
+      }
+      slides[slideIndexes[type]-1].style.display = "block";  
+      dots[slideIndexes[type]-1].className += " active";
+    }
+
+    // Initialize both slideshows
+    showSlides(slideIndexes.tanah, 'tanah');
+    showSlides(slideIndexes.rumah, 'rumah');
+  </script>
+</body>
+<footer style="background-color: #7b3fbf; color: white; text-align: center; padding: 20px 15px; font-size: 0.9rem; border-radius: 0 0 8px 8px;">
+    <p>© 2025 JualTanahBekasi. All rights reserved.</p>
+    <p>
+      <a href="mailto:info@jualtanahbekasi.com" style="color: #d1c4e9; text-decoration: none;">info@jualtanahbekasi.com</a> | 
+      <a href="tel:+628123456789" style="color: #d1c4e9; text-decoration: none;">+62 812-3456-789</a>
+    </p>
+    <p>
+
+      Lokasi Tanah: Jl. Pulo Utama, Mustika Jaya, Bekasi<br />
+      Lokasi Rumah: Dukuh Zamrud, Blok F9/37, Mustika Jaya, Bekasi
+    </p>
+  </footer>
+</html>
