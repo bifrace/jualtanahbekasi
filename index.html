@@ -60,36 +60,46 @@
       border-radius: 8px;
       box-shadow: 0 2px 8px rgba(0,0,0,0.05);
     }
-    .price {
-      font-weight: 700;
-      font-size: 1.3rem;
-      color: #d9534f;
-      margin-bottom: 15px;
-    }
-    .highlight {
-      font-weight: 700;
-      color: #004d99;
-    }
-    
-    .slideshow-container {
-      position: relative;
-      max-width: 100%;
-      margin: 20px auto 0 auto;
-      border-radius: 8px;
-      overflow: hidden;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-      width: 100%;
-      max-width: 600px; /* sesuaikan lebar maksimal */
-      /* jangan set height tetap */
+        .price {
+        font-weight: 700;
+        font-size: 1.3rem;
+        color: #d9534f;
+        margin-bottom: 15px;
+        }
+        .highlight {
+        font-weight: 700;
+        color: #004d99;
+        }
+        
+            .slideshow-container {
+    max-width: 100%;
+    width: 100%;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    margin: 20px auto 0 auto;
+    position: relative;
     }
 
     .slides {
-      display: none;
-      width: 100%;
-      height: auto; /* biarkan tinggi mengikuti rasio gambar */
-      object-fit: contain; /* tampilkan seluruh gambar tanpa crop */
-      border-radius: 8px;
-      background-color: #f9f9f9; /* warna background untuk area kosong */
+    display: none;
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    }
+
+    @media (max-width: 596px) {
+    .slideshow-container {
+        width: 100%;
+    }
+    .slides {
+        width: 100%;
+        height: auto;
+        object-fit: contain;
+        border-radius: 8px;
+    }
     }
 
     /* Next & previous buttons */
