@@ -110,6 +110,38 @@
       transition: background-color 0.3s ease;
       z-index: 10;
     }
+
+    #whatsapp-float {
+    position: fixed;
+    width: 60px;
+    height: 60px;
+    bottom: 20px;
+    right: 20px;
+    background-color: #25d366;
+    border-radius: 50%;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background-color 0.3s ease, opacity 0.3s ease;
+    opacity: 1;
+    }
+
+    #whatsapp-float.hide {
+    opacity: 0;
+    pointer-events: none;
+    }
+
+    #whatsapp-float:hover {
+    background-color: #1ebe57;
+    }
+
+    #whatsapp-float img {
+    width: 35px;
+    height: 35px;
+    }
+
     .next {
       right: 0;
       border-radius: 3px 0 0 3px;
@@ -155,6 +187,38 @@
     <h1>JualTanahBekasi</h1>
     <p>Tanah & Rumah Dijual – Mustika Jaya, Bekasi</p>
   </header>
+
+<!-- WhatsApp Floating Button -->
+    
+    <a href="https://wa.me/6281318139961" target="_blank" rel="noopener" id="whatsapp-float" aria-label="Chat WhatsApp">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" />
+  </a>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const whatsappBtn = document.getElementById('whatsapp-float');
+      const footer = document.querySelector('footer');
+  
+      function checkFooterVisibility() {
+        const footerRect = footer.getBoundingClientRect();
+        const windowHeight = window.innerHeight || document.documentElement.clientHeight;
+  
+        // Jika footer terlihat sebagian di viewport, sembunyikan tombol
+        if (footerRect.top < windowHeight && footerRect.bottom >= 0) {
+          whatsappBtn.classList.add('hide');
+        } else {
+          whatsappBtn.classList.remove('hide');
+        }
+      }
+  
+      // Cek saat scroll dan resize
+      window.addEventListener('scroll', checkFooterVisibility);
+      window.addEventListener('resize', checkFooterVisibility);
+  
+      // Cek sekali saat halaman dimuat
+      checkFooterVisibility();
+    });
+  </script>
 
   <div class="container">
 
@@ -289,6 +353,7 @@
     showSlides(slideIndexes.tanah, 'tanah');
     showSlides(slideIndexes.rumah, 'rumah');
   </script>
+  
 </body>
 <footer style="background-color: #7b3fbf; color: white; text-align: center; padding: 20px 15px; font-size: 0.9rem; border-radius: 0 0 8px 8px;">
     <p>© 2025 JualTanahBekasi. All rights reserved.</p>
