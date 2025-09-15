@@ -265,12 +265,13 @@
       <p><strong>Alamat:</strong> Dukuh Zamrud, Blok F, Mustika Jaya, Bekasi</p>
       <ul>
         <li><strong>Luas Tanah (LT):</strong> 117 m²</li>
+        
         <li><strong>Luas Bangunan (LB):</strong> 100 m²</li>
         <li><strong>Kamar Tidur:</strong> 2</li>
         <li><strong>Kamar Mandi:</strong> 2</li>
         <li><strong>Fasilitas:</strong> Dapur lengkap, ruang keluarga luas, carport 1 mobil, listrik 2.200 watt, air PDAM + sumur cadangan</li>
       </ul>
-      <p class="price">Harga: <span class="highlight">Rp 800 rb/m²</span></p>
+      <p class="price">Harga: <span class="highlight">Rp 800 juta</span></p>
       <h3>Keunggulan:</h3>
       <ul>
         <li>Bangunan kokoh, siap huni</li>
@@ -315,25 +316,25 @@
       tanah: 1,
       rumah: 1
     };
-
+  
     function plusSlides(n, type) {
       showSlides(slideIndexes[type] += n, type);
     }
-
+  
     function currentSlide(n, type) {
       showSlides(slideIndexes[type] = n, type);
     }
-
+  
     function showSlides(n, type) {
       let i;
       const containerId = type === 'tanah' ? 'slideshow-tanah' : 'slideshow-rumah';
       const dotsId = type === 'tanah' ? 'dots-tanah' : 'dots-rumah';
-
+  
       const slideshow = document.getElementById(containerId);
       const slides = slideshow.getElementsByClassName("slides");
       const dotsContainer = document.getElementById(dotsId);
       const dots = dotsContainer.getElementsByClassName("dot");
-
+  
       if (n > slides.length) {slideIndexes[type] = 1}    
       if (n < 1) {slideIndexes[type] = slides.length}
       for (i = 0; i < slides.length; i++) {
@@ -345,11 +346,24 @@
       slides[slideIndexes[type]-1].style.display = "block";  
       dots[slideIndexes[type]-1].className += " active";
     }
-
-    // Initialize both slideshows
-    showSlides(slideIndexes.tanah, 'tanah');
-    showSlides(slideIndexes.rumah, 'rumah');
+  
+    // Fungsi auto slide untuk tiap slideshow
+    function autoSlide(type, interval = 3000) {
+      setInterval(() => {
+        plusSlides(1, type);
+      }, interval);
+    }
+  
+    // Jalankan auto slide dan inisialisasi slideshow saat DOM siap
+    document.addEventListener('DOMContentLoaded', function() {
+      showSlides(slideIndexes.tanah, 'tanah');
+      showSlides(slideIndexes.rumah, 'rumah');
+  
+      autoSlide('tanah', 3000);
+      autoSlide('rumah', 3000);
+    });
   </script>
+  
 
   <script>
     document.addEventListener('DOMContentLoaded', function() {
